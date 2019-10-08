@@ -10,18 +10,20 @@ function App() {
   const [showList, setList] = useState(false);
   const showChat = () => setList(false);
   const showParticipates = () => setList(true);
-  
+
   return (
+    <>
     <div className="App">
       <div>
-        <button onClick={showChat}>Chat</button>
-        <button onClick={showParticipates}>Participates</button>
+      <div className='Tab-buttons'>
+        <button className={showList ? '' : 'active'} onClick={showChat}>Chat</button>
+        <button className={showList ? 'active' : ''} onClick={showParticipates}>Participates</button>
       </div>
-      
-      {(showList) 
+
+      {(showList)
         ? (<ul className="App-list">
           {store.participants.map(item => (item.inSession) ? (
-          <List key={item.id} name={item.name} avatar={item.avatar} onStage={item.onStage} />) : '')}
+            <List key={item.id} name={item.name} avatar={item.avatar} onStage={item.onStage} />) : '')}
         </ul>)
         : (<div className="App-list">
           {store.chatEvents.map((item, index) => (item.message)
@@ -31,7 +33,17 @@ function App() {
         </div>)}
       <Stage key='1' store={store.participants} />
     </div>
+    <div className='Footer'>
+        <div className='Emotes'>
+          <button> {'<'} </button>
+          <button>Up</button>
+          <button>Down</button>
+          <button>Raise Hand</button>
+          <button>Clap</button>
+        </div>
+      </div>
+   </>
   );
-};
+}
 
 export default App;

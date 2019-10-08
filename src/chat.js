@@ -1,7 +1,7 @@
 import React from 'react';
-
+import './list.css';
 import './App.css';
-import store from './store.js'
+import store from './store.js';
 
 
 function Chat(props) {
@@ -14,13 +14,13 @@ function Chat(props) {
 
     if (props.message) {
         const message = props.message;
-        const time = props.time;
+        let stamp = `${new Date(props.time).getHours()}:${new Date(props.time).getMinutes()}`;
 
         return (
             <li className='List'>
                 <img src={avatar} alt={alt} /> {name} {new Date(time).toTimeString()}
-                <div>{message}
-                </div>
+                <div> <b>{name}</b> <span className='emote'>{stamp}</span>
+                    <br />{message}</div>
             </li>
         );
     } else {
