@@ -1,16 +1,18 @@
 import React from 'react';
-import './App.css';
-import './List.css';
+
 
 function List(props) {
-    const name = props.name;
-    const avatar = props.avatar;
-    const onStage = props.onStage;
     return (
-        <li className = 'List'>
-            <img src={avatar} height='100px' />{name}
-            {onStage ? (<div> on stage</div>) : (<div> in session</div>)}
-        </li>
+        <div className = 'people'>
+            <img src={props.avatar} alt='avatar' />
+            <span>{props.name}</span>
+            <span>
+                {props.inSession === true ? 'In session' : 'Left session'}
+            </span>
+            <span>
+                {props.onStage === true ? 'On stage' : ''}
+            </span>
+        </div>
     );
 }
 

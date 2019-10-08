@@ -1,6 +1,4 @@
-const STORE = {
-
-    participants: [
+const participants = [
     {
         id: 1,
         name: 'Koren Templeton',
@@ -42,7 +40,7 @@ const STORE = {
     }
 ];
 
-const chatEvents = [
+    const chatEvents = [
     {
         participantId: 3,
         type: 'message',
@@ -90,8 +88,8 @@ const chatEvents = [
         type: 'leave-stage',
         timestamp: 1548852724247
     }
-],
-}
+];
+
 
 export default {
     participants, 
