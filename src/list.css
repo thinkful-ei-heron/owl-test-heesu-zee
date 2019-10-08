@@ -1,30 +1,35 @@
-.App-list li {
-	list-style: none;
-	min-width: 300px;
-	max-width: 500px;
-	margin: 10px 0;
-}
-
-.msg {
-	color: rgb(65, 65, 65);
-	display: flex;
-	flex-direction: row;
-	text-align: left;
+.people {
+    flex: 1;
+    padding: 1em;
 }
 
 img {
-	border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
-li img {
-	height: 50px;
-	margin: 0 5px;
+p {
+    display: inline-block;
 }
 
-.staged, .emote {
-	color: gray;
+.green-dot {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
 }
 
-.emote {
-	text-align: center;
+.red-dot {
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
 }
+

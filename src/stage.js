@@ -1,26 +1,21 @@
 import React from 'react';
 import './stage.css';
-
-function Tile(props) {
-	const alt = `The avatar of ${props.name}`
-	return (
-		<div className='Tile'>
-			<h2>{props.name}</h2>
-			<img src={props.avatar} alt={alt}/>
-		</div>
-	);
-};
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
+import { faVolumeUp, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function Stage(props) {
-	const arr = props.store.map(item => {
-			if (item.onStage) return <Tile key={item.id} name={item.name} avatar={item.avatar} />;
-		})
+    return (
+        <div className='stage-people'>
+            <span className='person'>{props.name}</span>
+            <div className='volume-bar'></div>
+            <div className='icons'>
+                <span className='volume'><FontAwesomeIcon icon={faVolumeUp}/></span>
+                <span className='search'><FontAwesomeIcon icon={faSearch}/></span>
+            </div>
+            <img src={props.avatar} alt='avatar' className='avatar'/>
+        </div>
+    )
+}
 
-	return (
-		<section className='Stage'>
-		    {arr}
-		</section>
-	);
-};
 
 export default Stage;

@@ -1,55 +1,57 @@
-import React, {useState} from 'react';
+import React, { Component } from 'react';
+import List from './list';
+import Stage from './stage';
+import Chat from './chat';
 import './App.css';
 
-import List from "./list";
-import Chat from "./chat";
-import store from "./store";
-import Stage from './stage';
-
-function App() {
-  const [showList, setList] = useState(false);
-  const showChat = () => setList(false);
-  const showParticipates = () => setList(true);
-
+class App extends Component {
+  static defaultProps = {
+    store: {
+      participants: [],
+      chatEvents: []
+    }
+  };
+  render() {
+    const { store } = this.props
   return (
-    <>
-    <div className="App">
-      <div>
-        <div className='tab-buttons'>
-          <button className={showList ? '' : 'active'} onClick={showChat}>Chat</button>
-          <button className={showList ? 'active' : ''} onClick={showParticipates}>Participates</button>
-        </div>
+    <main className="App">
+     <div className="people-list">
+       {store.participants.sort((a, b) => (b.inSession > a.inSession) ? 1 : -1).map(list => (
+         <List 
+          key={list.id}
+          name={list.name}
+          avatar={list.avatar}
+          inSession={list.inSession}
+          onStage={list.onStage}
+         />
+       ))}
+     </div>
 
-      {(showList)
-        ? (<ul className="App-list">
-          {store.participants.map(item => (item.inSession) ? (
-            <List key={item.id} name={item.name} avatar={item.avatar} onStage={item.onStage} />) : '')}
-        </ul>)
-        : (<div className="App-list">
-          {store.chatEvents.map((item, index) => (item.message)
-            ? (<Chat key={index} id={item.participantId} type={item.type} message={item.message}
-              time={item.time} />)
-            : <Chat key={index} id={item.participantId} type={item.type} />)}
-          </div>)}
-      </div>
-      <Stage key='1' store={store.participants} />
-    </div>
-    
-    <div className='footer'>
-        <div className='emotes'>
-          <button> {'<'} </button>
-          <button>Up</button>
-          <button>Down</button>
-          <button>Raise Hand</button>
-          <button>Clap</button>
-        </div>
-        
-        <div className='leaveStage'>
-          <button>Leave Stage</button>
-        </div>
-    </div>
-   </>
+     <div className='stage'>
+       {store.participants.filter(item => (item.onStage === true)).map(list => (
+        <Stage
+        key={list.id}
+        name={list.name}
+        avatar={list.avatar}
+        />
+       ))} 
+     </div>
+
+     <div className='chat'>
+       {store.chatEvents.map(chat => (
+         <Chat 
+          key={chat.participantID}
+          type={chat.type}
+          message={chat.message}
+          timestamp={chat.timestamp}
+          time={chat.time}
+         />
+       ))}
+       <input type="text" placeholder="Chat"></input>
+     </div>
+    </main>
   );
+  }
 }
 
 export default App;

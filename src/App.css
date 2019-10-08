@@ -1,73 +1,16 @@
 .App {
-	display: flex;
-	justify-content: flex-start;
-	min-height: 90vh;
-	max-height: 90vh;
-	overflow: hidden;
+  display: flex;
+  margin: 40px;
+  min-height: calc(100vh - 80px);
 }
 
-.tab-buttons {
-	height: 50px;
-	border: lightgray 1px solid;
-	justify-content: space-evenly;
-	display: flex;
+.people-list {
+  flex-basis: 1;
 }
 
-.tab-buttons button{
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-	font-size: large;
-}
-
-.tab-buttons button:focus{
-	border-bottom: 2px rgb(230, 189, 173);
-	outline: none;
-}
-
-.tab-buttons .active{
-	color: rgb(230, 189, 173);
-	border-bottom: 2px rgb(230, 189, 173) solid;
-}
-
-.emotes {
-	justify-content: space-evenly;
-	width: 360px;
-	display: flex;
-	height: -webkit-fill-available;
-}
-
-.emotes > button{
-	height: 50px;
-	width: 50px;
-	margin: auto;
-	cursor: pointer;
-}
-
-.emotes > button:focus{
-	outline: none;
-}
-
-.footer {
-	width: 100%;
-	display: flex;
-	background-color: white;
-	min-height: 9vh;
-	max-height: 9vh;
-	border-top: lightgray solid 1px;
-}
-
-.leaveStage {
-	justify-content: space-evenly;
-	width: 300px;
-	display: flex;
-	height: -webkit-fill-available;
-}
-
-.leaveStage > button {
-	height: 50px;
-	width: 100px;
-	margin: auto;
-	background-color: red;
-	color: white;
+.stage  {
+  display: flex;
+  flex-basis: 4;
+  width: 75%;
+  background: rgb(96, 99, 139);
 }

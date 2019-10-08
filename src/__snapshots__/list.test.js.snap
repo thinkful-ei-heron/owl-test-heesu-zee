@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> renders this UI as expected 1`] = `
+<div
+  className="people"
+>
+  <img
+    alt="avatar"
+    src="https://robohash.org/doloredolorescupiditate.jpg?size=200x200&set=set1"
+  />
+  <span>
+    balay
+  </span>
+  <div />
+  <span
+    className="red-dot"
+  />
+  <p>
+    
+  </p>
+</div>
+`;

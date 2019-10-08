@@ -1,16 +1,37 @@
-.Stage {
-	display: flex;
-	text-align: center;
-	justify-content: space-evenly;
-	background-color: rgb(73, 73, 87);
-	width: 100%;
+.stage-people {
+    width: 50%;
+    flex-basis: 1;
+    text-align: center;
+    padding-top: 40px;
+    color: white;
 }
 
-.Tile h2 {
-	background-color: rgb(48, 46, 46);
-	font-size: 16px;
-	color: white;
-	padding: 24px;
-	margin: -4px 0 auto;
-	border-radius: 4px;
+.person {
+    background: rgba(41, 42, 59, 0.753);
+    padding:10px;
+}
+
+.volume-bar {
+    margin: 0 auto;
+    width: 50%;
+    height: 1px;
+    background-color: rgb(255, 18, 50);
+    text-align: center;
+    position: relative;
+}
+
+.volume {
+    margin: 5px;
+    color: rgb(255, 18, 50);
+}
+
+.search {
+    margin: 5px;
+    color: white;
+}
+
+.avatar {
+    width: 50%;
+    height: auto;
+    margin-top: 50%;
 }
