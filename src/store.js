@@ -94,4 +94,4 @@ const chatEvents = [
 export default {
     participants, 
     chatEvents
-}
+};

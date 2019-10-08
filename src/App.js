@@ -17,10 +17,11 @@ function App() {
         <button onClick={showChat}>Chat</button>
         <button onClick={showParticipates}>Participates</button>
       </div>
-      {(showList)
+      
+      {(showList) 
         ? (<ul className="App-list">
           {store.participants.map(item => (item.inSession) ? (
-            <List key={item.id} name={item.name} avatar={item.avatar} onStage={item.onStage} />) : '')}
+          <List key={item.id} name={item.name} avatar={item.avatar} onStage={item.onStage} />) : '')}
         </ul>)
         : (<div className="App-list">
           {store.chatEvents.map((item, index) => (item.message)

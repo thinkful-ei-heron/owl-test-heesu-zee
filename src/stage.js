@@ -18,7 +18,7 @@ function Stage(props) {
 
 	return (
 		<section className='Stage'>
-			{arr}
+		    {arr}
 		</section>
 	);
 };
