@@ -6,54 +6,68 @@
 	overflow: hidden;
 }
 
-.Tab-buttons {
+.tab-buttons {
 	height: 50px;
 	border: lightgray 1px solid;
 	justify-content: space-evenly;
 	display: flex;
 }
 
-.Tab-buttons button{
+.tab-buttons button{
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
 	font-size: large;
 }
 
-.Tab-buttons button:focus{
-	border-bottom: 2px lightblue solid;
+.tab-buttons button:focus{
+	border-bottom: 2px rgb(230, 189, 173);
 	outline: none;
 }
 
-.Tab-buttons .active{
-	color: lightblue;
-	border-bottom: 2px lightblue solid;
+.tab-buttons .active{
+	color: rgb(230, 189, 173);
+	border-bottom: 2px rgb(230, 189, 173) solid;
 }
 
-.Footer {
-	width: 100%;
-	display: block;
-	background-color: white;
-	min-height: 9vh;
-	max-height: 9vh;
-	border-top: lightgray solid 1px;
-}
-
-.Emotes {
+.emotes {
 	justify-content: space-evenly;
 	width: 360px;
 	display: flex;
 	height: -webkit-fill-available;
 }
 
-.Emotes > button{
+.emotes > button{
 	height: 50px;
 	width: 50px;
-	border-radius: 100%;
 	margin: auto;
 	cursor: pointer;
 }
 
-.Emotes > button:focus{
+.emotes > button:focus{
 	outline: none;
+}
+
+.footer {
+	width: 100%;
+	display: flex;
+	background-color: white;
+	min-height: 9vh;
+	max-height: 9vh;
+	border-top: lightgray solid 1px;
+}
+
+.leaveStage {
+	justify-content: space-evenly;
+	width: 300px;
+	display: flex;
+	height: -webkit-fill-available;
+}
+
+.leaveStage > button {
+	height: 50px;
+	width: 100px;
+	margin: auto;
+	background-color: red;
+	color: white;
 }

@@ -15,7 +15,7 @@ function App() {
     <>
     <div className="App">
       <div>
-        <div className='Tab-buttons'>
+        <div className='tab-buttons'>
           <button className={showList ? '' : 'active'} onClick={showChat}>Chat</button>
           <button className={showList ? 'active' : ''} onClick={showParticipates}>Participates</button>
         </div>
@@ -35,15 +35,19 @@ function App() {
       <Stage key='1' store={store.participants} />
     </div>
     
-    <div className='Footer'>
-        <div className='Emotes'>
+    <div className='footer'>
+        <div className='emotes'>
           <button> {'<'} </button>
           <button>Up</button>
           <button>Down</button>
           <button>Raise Hand</button>
           <button>Clap</button>
         </div>
-      </div>
+        
+        <div className='leaveStage'>
+          <button>Leave Stage</button>
+        </div>
+    </div>
    </>
   );
 }
