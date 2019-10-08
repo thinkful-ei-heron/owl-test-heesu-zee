@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 import List from "./list";
@@ -15,10 +15,10 @@ function App() {
     <>
     <div className="App">
       <div>
-      <div className='Tab-buttons'>
-        <button className={showList ? '' : 'active'} onClick={showChat}>Chat</button>
-        <button className={showList ? 'active' : ''} onClick={showParticipates}>Participates</button>
-      </div>
+        <div className='Tab-buttons'>
+          <button className={showList ? '' : 'active'} onClick={showChat}>Chat</button>
+          <button className={showList ? 'active' : ''} onClick={showParticipates}>Participates</button>
+        </div>
 
       {(showList)
         ? (<ul className="App-list">
@@ -30,9 +30,11 @@ function App() {
             ? (<Chat key={index} id={item.participantId} type={item.type} message={item.message}
               time={item.time} />)
             : <Chat key={index} id={item.participantId} type={item.type} />)}
-        </div>)}
+          </div>)}
+      </div>
       <Stage key='1' store={store.participants} />
     </div>
+    
     <div className='Footer'>
         <div className='Emotes'>
           <button> {'<'} </button>

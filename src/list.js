@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import './List.css';
+import './list.css';
 
 function List(props) {
     const name = props.name;
