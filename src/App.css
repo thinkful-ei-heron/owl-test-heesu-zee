@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  margin: 40px;
+  margin: 41px;
   min-height: calc(100vh - 80px);
 }
 
@@ -12,5 +12,5 @@
   display: flex;
   flex-basis: 4;
   width: 75%;
-  background: rgb(96, 99, 139);
+  background: rgb(73, 73, 87);;
 }
