@@ -5,7 +5,7 @@ import './list.css';
 function List(props) {
     const name = props.name;
     const avatar = props.avatar;
-    const alt = `The avatar of ${name}`
+    const alt = `The avatar of ${name}`;
     const onStage = props.onStage;
     
     return (
