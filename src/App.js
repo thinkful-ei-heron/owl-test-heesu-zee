@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import List from "./list";
 import Chat from "./chat";
 import store from "./store";
@@ -9,6 +10,7 @@ function App() {
   const [showList, setList] = useState(false);
   const showChat = () => setList(false);
   const showParticipates = () => setList(true);
+  
   return (
     <div className="App">
       <div>
@@ -29,6 +31,6 @@ function App() {
       <Stage key='1' store={store.participants} />
     </div>
   );
-}
+};
 
 export default App;

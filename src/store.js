@@ -40,7 +40,7 @@ const participants = [
     }
 ];
 
-    const chatEvents = [
+const chatEvents = [
     {
         participantId: 3,
         type: 'message',
